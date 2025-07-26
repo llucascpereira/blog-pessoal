@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Carvalho Pereira">
+    <meta name="description"
+        content="Home - Blog pessoal para aperfeiçoamento de técnicas de desenvolvimento web e portfólio de Lucas Carvalho Pereira. Aqui você encontrará informações sobre projetos, habilidades técnicas e interesses pessoais.">
+    <meta name="keywords"
+        content="blog, estudo, prático de navios, cabaxi roxo, twitch, portifólio, Lucas Carvalho Pereira, engenharia de computação, desenvolvimento web, tecnologia, programação, software, projetos, GitHub, LinkedIn">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#226DAA" />
+    <title>Blog pessoal</title>
+
+    <link href="../img/logo.jpg" rel="icon" type="image/x-icon"> <!-- Favicon -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    "/header.html"
+    
+    <main>
+        <section class="hero__container"></section>
+
+        <section>
+            <h1>Portifolio</h1>
+            <div class="index__perfil--box">
+                <div class="index__perfil--img">
+                    <img src="../img/quadardoFotoPerfil.png" alt="Minha foto" title="foto de perfil" width="200"
+                        height="200">
+                </div>
+                <div class="index__perfil--text">
+                    <h2>Lucas Carvalho Pereira</h2>
+                    <p>
+                        Desenvolvedor web apaixonado pela eficiência e colaboração. Minha jornada como engenheiro de
+                        computação me trouxe habilidades para transformar códigos em soluções impactantes, e meu amor
+                        por trabalhar em equipe amplifica esse potencial. Constante aprendiz, mergulho de cabeça em
+                        novos desafios, absorvendo conhecimento com facilidade e aplicando-o para melhorar a experiência
+                        do usuário.
+                        <br><br>
+                        Além do mundo digital, minhas paixões incluem explorar narrativas em jogos de RPG e aprimorar
+                        minha mente e corpo através do swordplay e Kung Fu. Enquanto embarco em uma nova jornada como
+                        prático de navios, trago minha adaptabilidade e dedicação para este novo capítulo. Com
+                        experiência também em liderança através de grupos sociais, como a Ordem DeMolay e a Pastoral
+                        Juvenil Marista, estou ansioso para conectar com pessoas compartilhando interesses em
+                        tecnologia, desenvolvimento e paixões pessoais.
+                    </p>
+                    <div>
+                        <svg width="40" height="41" viewBox="0 0 400 414">
+                            <g transform="translate(-810 588)">
+                                <circle cx="200" cy="200" r="200" transform="translate(810 -574)" fill="#147eb8" /><text
+                                    transform="translate(1010 -264)" fill="#fff" font-size="300"
+                                    font-family="SegoeUI-Bold, Segoe UI" font-weight="700">
+                                    <tspan x="-133.374" y="0">in</tspan>
+                                </text>
+                            </g>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/llucascpereira/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div>
+                        <svg width="40" height="41" viewBox="0 0 400 414">
+                            <g transform="translate(-810 588)">
+                                <circle cx="200" cy="200" r="200" transform="translate(810 -574)" fill="#147eb8" /><text
+                                    transform="translate(1010 -264)" fill="#fff" font-size="300"
+                                    font-family="SegoeUI-Bold, Segoe UI" font-weight="700">
+                                    <tspan x="-133.374" y="0">in</tspan>
+                                </text>
+                            </g>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/llucascpereira/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Projetos e experiências</h2>
+            </div>
+
+            <div>
+                <h2>Habilidades técnicas</h2>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+        <section class="">
+            <hr>
+            <!-- avisos importantes -->
+        </section>
+    </aside>
+    <footer>
+        <section class="">
+            <p><small>Copyright © 2025 Lucas Carvalho Pereira<sup>®</sup></small></p>
+        </section>
+    </footer>
+</body>
+
+</html>

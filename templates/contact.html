@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas Pereira">
+    <meta name="description" content="Página onde você entra em contato comigo!">
+    <meta name="keywords" content="contato, telefone, e-mail">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Contato</title>
+
+    <link rel="icon" href="../img/logo.jpg" type="image/x-icon"> <!-- Favicon -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <script src="../js/contact.js"></script>
+</head>
+
+<body>
+    <main>
+        <section id="contact" class="grid grid__1200">
+            <p class="nav__item">
+                <a href="index.html">Back to Home</a>
+            </p>
+            <h2>Contato</h2>
+            <p>Fala que eu te escuto, manda uma mensagem de opnião do que você acha que devemos implementar no site.</p>
+
+            <div class="grid grid__justify-between grid__align-center">
+                <form id="form__contact" class="form__box" action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <legend>Informações pessoais</legend>
+                        <div class="grid grid__justify-between grid__align-center">
+                            <div class="grid__half">
+                                <label>
+                                    Digite seu nome
+                                    <input class="form__input" type="text" name="name" id="name" placeholder="Nome"
+                                        autocomplete="given-name" pattern="[a-zA-Z]{2,20}"
+                                        title="No nome você pode utilizar letras de a até z e de dois a vinte caracteres, podendo contar letras maiusculas ou minusculas."
+                                        required autofocus>
+                                </label>
+                            </div>
+                            <div class="grid__half">
+                                <label>
+                                    Digite seu sobrenome
+                                    <input class="form__input" type="text" name="lastName" id="lastName"
+                                        placeholder="Sobrenome" autocomplete="family-name" pattern="[a-zA-Z]{2,20}"
+                                        title="No sobrenome você pode utilizar letras de a até z e de dois a vinte caracteres, podendo contar letras maiusculas ou minusculas."
+                                        required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grid grid__justify-between grid__align-center">
+                            <div class="grid__half">
+                                <label for="nickname">Digite seu apelido</label>
+                                <input class="form__input" type="text" name="nickname" id="nickname"
+                                    placeholder="Apelido" autocomplete="nickname" pattern="[a-zA-Z]{2,20}"
+                                    title="No apelido você pode utilizar no mínimo cinco e no máximo vinte letras de a até z e de dois a vinte caracteres, podendo contar letras maiusculas ou minusculas."
+                                    minlength="5" maxlength="20">
+                            </div>
+                            <div class="grid__half">
+                                <label for="phone">Digite seu telefone</label>
+                                <input class="form__input" type="tel" name="phone" id="phone" placeholder="Telefone"
+                                    min="9" max="11">
+                            </div>
+                        </div>
+                        <div class="grid__full">
+                            <label for="email">Digite seu e-mail</label>
+                            <input class="form__input" type="email" id="mail" name="mail" placeholder="E-mail"
+                                autocomplete="email" required>
+                            <!-- <span class="error" aria-live="polite"></span> -->
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Queremos te conhecer melhor</legend>
+                        <p>
+                            <label for="decade">Qual sua decada favorita?</label>
+                            <input type="number" name="decade" id="decade" min="0" max="2020" step="10" value="1990">
+                        </p>
+                        <p>
+                            <label for="coffee">Qual seu café favorito:</label>
+                            <select name="coffee" id="coffee" multiple size="5">
+                                <optgroup label="Coffees">
+                                    <option value="regular coffee">Regular coffee</option>
+                                    <option value="iced coffee">Iced coffee</option>
+                                    <option value="affogato">Affogato!</option>
+                                </optgroup>
+                                <optgroup label="Espresso drinks">
+                                    <option value="gato preto">Gato preto</option>
+                                    <option value="doppio">Doppio</option>
+                                    <option value="macchiato">Macchiato</option>
+                                    <option value="duplo macchiato">Duplo Macchiato</option>
+                                    <option value="latte">Latte não, mia!</option>
+                                    <option value="cappuccino">Cappuccino</option>
+                                </optgroup>
+                                <option value="other">Other</option>
+                            </select>
+                        </p>
+                        <div>
+                            <label for="food">Escolha uma comida:</label>
+                            <p>
+                                <input type="radio" name="food" id="tacos" value="tacos">
+                                <label for="tacos">Tacos</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="food" id="pizza" value="pizza">
+                                <label for="pizza">Pizza</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="food" id="lasanha" value="lasanha">
+                                <label for="lasanha">Lasanha</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="food" id="other" value="other">
+                                <label for="other">Outros</label>
+                                <!-- <input type="text" name="otherOptionFood" id="otherOptionFood" placeholder="Digite sua comida favorita" autocomplete="on"> -->
+                            </p>
+                        </div>
+                        <div>
+                            <label for="pets">Você tem pet?</label>
+                            <p>
+                                <input type="checkbox" name="pets" id="dog" value="dog">
+                                <label for="dog">Cachorro</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" name="pets" id="cat" value="cat">
+                                <label for="cat">Gato</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" name="pets" id="fish" value="fish">
+                                <label for="fish">Peixe</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" name="pets" id="otherPet" value="otherPet">
+                                <label for="otherPet">Outros</label>
+                                <!-- <input type="text" name="otherOptionPet" id="otherOptionPet" placeholder="Digite seu pet favorito" autocomplete="on"> -->
+                            </p>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Nos diga sua opnião sobre o site:</legend>
+                        <label for="message">Sua mensagem</label>
+                        <br>
+                        <textarea name="message" id="message" maxlength="250" placeholder="Escreva aqui..."
+                            required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <input type="hidden" id="postId" name="postId" value="123" />
+                        <input type="hidden" id="page" name="page" value="Contato" />
+
+                        <button type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+
+                <div class="grid__half">
+                    <address>Curitiba/PR</address>
+                    <iframe class="contact__map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57675.02820037691!2d-49.301941394805915!3d-25.381728778291247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce6c211eec2b5%3A0xe017a165c1da729e!2zUGFycXVlIFPDo28gTG91cmVuw6dv!5e0!3m2!1spt-BR!2sbr!4v1687373612515!5m2!1spt-BR!2sbr"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>Copyright © 2025 Lucas Carvalho Pereira<sup>®</sup></small></p>
+        <p class="nav__item">
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+</body>
+
+<script>
+
+    const usernameInput = document.querySelector('[name="name"]');
+
+    usernameInput.addEventListener('invalid', () => {
+        usernameInput.setCustomValidity('Preencha seu nome.');
+    });
+
+</script>
+
+</html>

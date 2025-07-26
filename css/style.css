@@ -1,0 +1,910 @@
+/**
+ * @name * Blog Pessoal
+ * @file * style.css
+ * @author * Lucas Carvalho Pereira
+ * @description * css for Template 1
+ * @license * Todos os direitos reservados - Lucas Carvalho Pereira®
+ * @version * 1.1
+ */
+
+
+
+/* ==========================================================================
+   = general
+   ========================================================================== */
+
+
+/* = variables
+   ========================================================================== */
+
+:root {
+   --primary-color: #007BFF;
+   --secondary-color: #396EAA;
+   --tertiary-color: #405E80;
+   --accent-color: #28a745;
+   --text-dark: #333;
+   --text-light: #f8f8f8;
+   --bg-light: #f0f0f0;
+   --bg-dark: #212529;
+   --border-color: #ddd;
+}
+
+/* --- Basic Reset e Global Styles --- */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+/* = font
+   ========================================================================== */
+
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 400;
+   font-display: swap;
+   src: local('Roboto Regular'), local('Roboto-Regular'), url(../font/Roboto-Regular.woff2) format('woff2');
+}
+
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 700;
+   font-display: swap;
+   src: local('Roboto Bold'), local('Roboto-Bold'), url(../font/Roboto-Bold.woff2) format('woff2');
+}
+
+
+/* = page
+   ========================================================================== */
+
+body {
+   padding-top: 0;
+   /* Removido padding fixo do body */
+   background: var(--bg-dark);
+   color: var(--text-light);
+   font-family: 'Roboto', Arial, sans-serif;
+   font-size: 14px;
+   line-height: 20px;
+}
+
+.container {
+   width: 85%;
+   max-width: 1200px;
+   margin: auto;
+   padding: 15px;
+   overflow: hidden;
+}
+
+/* = text
+   ========================================================================== */
+
+a {
+   text-decoration: none;
+}
+
+
+/* = placeholders
+   ========================================================================== */
+
+::placeholder {
+   color: var(--secondary-color);
+   opacity: 1;
+   transition: opacity 0.1s;
+   -webkit-transition: opacity 0.1s;
+}
+
+:focus::placeholder {
+   opacity: 0;
+}
+
+
+/* = scrollbar
+  ========================================================================== */
+
+* {
+   scrollbar-color: var(--text-light) #ccc;
+}
+
+body * {
+   scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+   width: 8px;
+   background-color: #ccc;
+}
+
+body::-webkit-scrollbar {
+   width: initial;
+   scrollbar-color: var(--text-light) #ccc;
+   scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+   background-color: var(--text-light);
+}
+
+
+
+/* ==========================================================================
+   = breakpoint full ( 1600px - 100% )
+   ========================================================================== */
+
+/* = preloader
+   ========================================================================== */
+
+#preloader {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: var(--primary-color);
+   display: flex;
+   flex-direction: column;
+   opacity: 1;
+   visibility: visible;
+   z-index: 9999;
+   justify-content: center;
+   align-items: center;
+   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+#preloader.hidden {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+}
+
+.spinner {
+   width: 60px;
+   height: 60px;
+   border: 8px solid rgba(0, 0, 0, 0.1);
+   border-top: 8px solid var(--primary-color);
+   border-radius: 50%;
+   margin-bottom: 20px;
+   animation: spin 1s linear infinite;
+}
+
+#preloader p {
+   font-size: 1.2em;
+   font-weight: bold;
+   color: #555;
+}
+
+/* Animação do Spinner */
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+/* = header
+   ========================================================================== */
+
+.header__container {
+   padding: 1.5rem 15px 0;
+   background: var(--bg-dark);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   text-align: center;
+}
+
+.header__title {
+   margin: 0 0 15px;
+   font-size: 3em;
+   line-height: 1em;
+}
+
+.header__text {
+   margin: 0 0 15px;
+   font-size: 1.1em;
+   line-height: 1em;
+}
+
+
+/* = nav
+   ========================================================================== */
+
+.nav__container {
+   width: 100%;
+   height: auto;
+   padding: 0 15px;
+}
+
+.nav__list {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   list-style: none;
+}
+
+.nav__item {
+   margin: 0 10px;
+}
+
+.nav__link {
+   display: inline-block;
+   padding: 15px;
+   color: var(--text-light);
+   font-weight: bold;
+   transition: color 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link:active {
+   color: var(--primary-color);
+}
+
+
+/* = Hero
+   ========================================================================== */
+
+
+/* = index
+   ========================================================================== */
+
+.section {
+   padding: 90px 0;
+   /* Mais espaçamento entre seções */
+   margin: 0 15px;
+   border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-of-type {
+   border-bottom: none;
+}
+
+.bg-light-section {
+   background: var(--bg-light);
+   /* Para alternar o fundo */
+}
+
+
+/* = about
+   ========================================================================== */
+
+.about__container {
+   text-align: justify;
+}
+
+.about__text {
+   font-size: 1.1em;
+   line-height: 1.8;
+}
+
+.about__list {
+   padding-left: 30px;
+   margin-top: 15px;
+   list-style: disc;
+   /* Bolinhas padrão */
+}
+
+.about__topic {
+   margin-bottom: 15px;
+   font-size: 1.05em;
+   line-height: 1.6;
+}
+
+
+/* = skills
+   ========================================================================== */
+
+
+/* = perfil (portifólio)
+   ========================================================================== */
+
+
+/* = contact
+   ========================================================================== */
+
+.contact__map {
+   width: 50%;
+   height: 500px;
+}
+
+.validation-message {
+   display: block;
+   padding-top: 0.4em;
+   color: red;
+}
+
+
+/* = form
+   ========================================================================== */
+
+.form__box {
+   width: 50%;
+   height: auto;
+   max-width: 500px;
+   padding: 30px 30px 20px;
+   background-color: burlywood;
+   border-radius: 10px;
+   color: #000;
+}
+
+fieldset {
+   margin-bottom: 10px;
+}
+
+.form__grid p {
+   display: flex;
+}
+
+label {
+   flex: 2;
+   padding-right: 15px;
+}
+
+.form__input {
+   width: 100%;
+   height: 30px;
+   padding: 0px 10px;
+   margin: 0px 15px 15px;
+}
+
+/* This is our style for the invalid fields */
+.form__input:invalid {
+   border-color: #900;
+   background-color: #fdd;
+}
+
+.form__input:focus:invalid {
+   outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+   width: 100%;
+   padding: 0;
+
+   font-size: 80%;
+   color: white;
+   background-color: #900;
+   border-radius: 0 0 5px 5px;
+
+   box-sizing: border-box;
+}
+
+.error.active {
+   padding: 0.3em;
+}
+
+textarea {
+   height: 60px;
+}
+
+
+/* = pilot
+   ========================================================================== */
+
+table,
+tr,
+th,
+td,
+caption {
+   padding: 0.5rem;
+   border: 1px solid #EEE;
+   border-collapse: collapse;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* = cabaxi-roxo
+   ========================================================================== */
+
+.cabaxi-roxo__title-img {
+   margin: 0px 10px 0px 0px;
+}
+
+.cabaxi-roxo__title-link {
+   color: var(--bg-light);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.cabaxi-roxo__title {
+   max-width: 350px;
+   margin: 0px auto;
+   padding: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #FFF;
+   border-radius: 10px;
+}
+
+
+/* = not found
+   ========================================================================== */
+
+.not-found {
+   min-height: 100vh;
+   /* Garante que o conteúdo ocupe a altura mínima da tela */
+   padding: 20px;
+   background-color: var(--bg-light);
+   /* Usa a cor de fundo do seu tema */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.not-found__error {
+   width: 100%;
+   max-width: 600px;
+   padding: 40px;
+   background: #fff;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.not-found__title {
+   margin-bottom: 10px;
+   color: var(--primary-color);
+   font-size: 5em;
+   line-height: 1em;
+}
+
+.not-found__subtitle {
+   margin-bottom: 20px;
+   color: var(--text-dark);
+   font-size: 1.8em;
+}
+
+.not-found__text {
+   margin-bottom: 30px;
+   color: #666;
+   font-size: 1.1em;
+}
+
+.not-found__btn {
+   padding: 12px 25px;
+   background: var(--primary-color);
+   color: var(--text-light);
+   border-radius: 5px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   display: inline-block;
+   text-decoration: none;
+   font-weight: bold;
+   transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.not-found__btn:hover {
+   background: #0056b3;
+   transform: translateY(-3px);
+}
+
+/* = footer
+   ========================================================================== */
+
+/* Pop-up de Política de Privacidade (LGPD) */
+.popup-overlay {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.7);
+   /* Fundo escuro semi-transparente */
+   opacity: 0;
+   visibility: hidden;
+   z-index: 2000;
+   /* Acima de tudo */
+   display: none;
+   /* Começa escondido */
+   justify-content: center;
+   align-items: center;
+   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+.popup-content {
+   width: 90%;
+   max-width: 700px;
+   /* Largura máxima para legibilidade */
+   max-height: 80vh;
+   /* Altura máxima para caber na tela */
+   padding: 30px;
+   position: relative;
+   background: #fff;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+   overflow-y: auto;
+   /* Adiciona scroll se o conteúdo for muito longo */
+   transform: scale(0.9);
+   /* Começa um pouco menor para efeito de transição */
+   transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-content {
+   transform: scale(1);
+   /* Expande para o tamanho normal ao ativar */
+}
+
+.popup-content h2 {
+   margin-bottom: 25px;
+   color: var(--primary-color);
+   font-size: 2em;
+   text-align: center;
+}
+
+.popup-content h3 {
+   margin-top: 20px;
+   margin-bottom: 10px;
+   color: var(--text-dark);
+   font-size: 1.4em;
+}
+
+.popup-content p,
+.popup-content li {
+   margin-bottom: 10px;
+   color: #555;
+   font-size: 0.95em;
+   line-height: 1.7;
+}
+
+.popup-content ul {
+   padding-left: 25px;
+   margin-bottom: 15px;
+   list-style: disc;
+}
+
+/* Botão de Fechar no topo */
+.close-popup-btn {
+   padding: 5px 10px;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   background: none;
+   border: none;
+   border-radius: 50%;
+   color: #888;
+   cursor: pointer;
+   font-size: 2em;
+   transition: color 0.3s ease, background 0.3s ease;
+}
+
+.close-popup-btn:hover {
+   background: #f0f0f0;
+   color: var(--primary-color);
+}
+
+
+/* ========================================================================== (PAREI AQUI)
+   = breakpoint xl ( 1340px - 1600px )
+   ========================================================================== */
+
+@media (max-width: 1600px) {
+
+   /* = preloader
+       ========================================================================== */
+
+
+   /* = header
+       ========================================================================== */
+
+
+   /* = nav 
+       ========================================================================== */
+
+
+   /* = Hero
+       ========================================================================== */
+
+
+   /* = index
+       ========================================================================== */
+
+
+   /* = about
+       ========================================================================== */
+
+
+   /* = skills
+       ========================================================================== */
+
+
+   /* = perfil (portifólio)
+       ========================================================================== */
+
+
+   /* = contact
+       ========================================================================== */
+
+
+   /* = form
+       ========================================================================== */
+
+
+   /* = pilot
+       ========================================================================== */
+
+
+   /* = cabaxi-roxo
+       ========================================================================== */
+
+
+   /* = not found
+       ========================================================================== */
+
+
+   /* = footer
+       ========================================================================== */
+
+}
+
+
+
+/* ==========================================================================
+   = breakpoint lg ( 1080px - 1340px )
+   ========================================================================== */
+
+@media (max-width: 1340px) {
+
+   /* = preloader
+       ========================================================================== */
+
+
+   /* = header
+       ========================================================================== */
+
+
+   /* = nav 
+       ========================================================================== */
+
+
+   /* = Hero
+       ========================================================================== */
+
+
+   /* = index
+       ========================================================================== */
+
+
+   /* = about
+       ========================================================================== */
+
+
+   /* = skills
+       ========================================================================== */
+
+
+   /* = perfil (portifólio)
+       ========================================================================== */
+
+
+   /* = contact
+       ========================================================================== */
+
+
+   /* = form
+       ========================================================================== */
+
+
+   /* = pilot
+       ========================================================================== */
+
+
+   /* = cabaxi-roxo
+       ========================================================================== */
+
+
+   /* = not found
+       ========================================================================== */
+
+
+   /* = footer
+       ========================================================================== */
+
+}
+
+
+
+/* ==========================================================================
+   = breakpoint md ( 820px - 1080px )
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+
+   /* = preloader
+       ========================================================================== */
+
+
+   /* = header
+       ========================================================================== */
+
+
+   /* = nav 
+       ========================================================================== */
+
+
+   /* = Hero
+       ========================================================================== */
+
+
+   /* = index
+       ========================================================================== */
+
+
+   /* = about
+       ========================================================================== */
+
+
+   /* = skills
+       ========================================================================== */
+
+
+   /* = perfil (portifólio)
+       ========================================================================== */
+
+
+   /* = contact
+       ========================================================================== */
+
+
+   /* = form
+       ========================================================================== */
+
+
+   /* = pilot
+       ========================================================================== */
+
+
+   /* = cabaxi-roxo
+       ========================================================================== */
+
+
+   /* = not found
+       ========================================================================== */
+
+
+   /* = footer
+       ========================================================================== */
+
+}
+
+
+
+/* ==========================================================================
+   = breakpoint sm ( 567px - 820px )
+   ========================================================================== */
+
+@media (max-width: 820px) {
+
+   /* = preloader
+       ========================================================================== */
+
+
+   /* = header
+       ========================================================================== */
+
+
+   /* = nav 
+       ========================================================================== */
+
+
+   /* = Hero
+       ========================================================================== */
+
+
+   /* = index
+       ========================================================================== */
+
+
+   /* = about
+       ========================================================================== */
+
+
+   /* = skills
+       ========================================================================== */
+
+
+   /* = perfil (portifólio)
+       ========================================================================== */
+
+
+   /* = contact
+       ========================================================================== */
+
+
+   /* = form
+       ========================================================================== */
+
+
+   /* = pilot
+       ========================================================================== */
+
+
+   /* = cabaxi-roxo
+       ========================================================================== */
+
+
+   /* = not found
+       ========================================================================== */
+
+
+   /* = footer
+       ========================================================================== */
+
+}
+
+
+
+/* ==========================================================================
+   = breakpoint xs ( 0px - 567px )
+   ========================================================================== */
+
+@media (max-width: 567px) {
+
+   /* = preloader
+       ========================================================================== */
+
+
+   /* = header
+       ========================================================================== */
+
+
+   /* = nav 
+       ========================================================================== */
+
+
+   /* = Hero
+       ========================================================================== */
+
+
+   /* = index
+       ========================================================================== */
+
+
+   /* = about
+       ========================================================================== */
+
+
+   /* = skills
+       ========================================================================== */
+
+
+   /* = perfil (portifólio)
+       ========================================================================== */
+
+
+   /* = contact
+       ========================================================================== */
+
+
+   /* = form
+       ========================================================================== */
+
+
+   /* = pilot
+       ========================================================================== */
+
+
+   /* = cabaxi-roxo
+       ========================================================================== */
+
+
+   /* = not found
+       ========================================================================== */
+
+
+   /* = footer
+       ========================================================================== */
+
+}
