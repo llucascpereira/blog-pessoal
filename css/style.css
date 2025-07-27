@@ -62,7 +62,6 @@
 
 body {
    padding-top: 0;
-   /* Removido padding fixo do body */
    background: var(--bg-dark);
    color: var(--text-light);
    font-family: 'Roboto', Arial, sans-serif;
@@ -74,7 +73,7 @@ body {
    width: 85%;
    max-width: 1200px;
    margin: auto;
-   padding: 15px;
+   padding: 30px 15px;
    overflow: hidden;
 }
 
@@ -193,8 +192,6 @@ body::-webkit-scrollbar {
 
 .header__container {
    padding: 1.5rem 15px 0;
-   background: var(--bg-dark);
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
    text-align: center;
 }
 
@@ -218,6 +215,8 @@ body::-webkit-scrollbar {
    width: 100%;
    height: auto;
    padding: 0 15px;
+   /* background: var(--bg-dark); */
+   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
 }
 
 .nav__list {
@@ -250,25 +249,40 @@ body::-webkit-scrollbar {
 /* = Hero
    ========================================================================== */
 
+.hero__container {
+   padding: 0 15px;
+   display: flex;
+}
+
+.hero__img {
+   width: 30%;
+   height: auto;
+}
+
+.hero__perfil {
+   width: 70%;
+   height: auto;
+   text-align: justify;
+   font-size: 1.05em;
+   line-height: 1.6;
+}
+
+.hero__text {
+   margin-bottom: 10px;
+}
+
+.hero__list {
+   padding-left: 30px;
+   list-style: disc;
+}
+
+.hero__topic {
+   margin-bottom: 5px;
+}
+
 
 /* = index
    ========================================================================== */
-
-.section {
-   padding: 90px 0;
-   /* Mais espaçamento entre seções */
-   margin: 0 15px;
-   border-bottom: 1px solid var(--border-color);
-}
-
-.section:last-of-type {
-   border-bottom: none;
-}
-
-.bg-light-section {
-   background: var(--bg-light);
-   /* Para alternar o fundo */
-}
 
 
 /* = about
@@ -287,7 +301,6 @@ body::-webkit-scrollbar {
    padding-left: 30px;
    margin-top: 15px;
    list-style: disc;
-   /* Bolinhas padrão */
 }
 
 .about__topic {
@@ -300,14 +313,329 @@ body::-webkit-scrollbar {
 /* = skills
    ========================================================================== */
 
+.skills__container {
+   padding: 0 15px;
+}
 
-/* = perfil (portifólio)
+.skills__title {
+   margin-bottom: 30px;
+   font-size: 2em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.skills__grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 30px;
+}
+
+.skills__item {
+   padding: 30px;
+   background: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills__item:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skills__subtitle {
+   margin-bottom: 15px;
+   color: var(--primary-color);
+   font-size: 1.6em;
+}
+
+.skills__text {
+   margin-bottom: 0;
+   color: #555;
+}
+
+
+/* = portifolio
    ========================================================================== */
+
+.portfolio__container {
+   padding: 0 15px;
+}
+
+.portfolio__title {
+   margin-bottom: 10px;
+   font-size: 2em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.portfolio__subtitle {
+   margin-bottom: 30px;
+   font-size: 1.1em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.portfolio__carousel {
+   width: 100%;
+   padding: 0 0 10px;
+   margin: 0 auto;
+   overflow: hidden;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center
+}
+
+.portfolio__slides-wrapper {
+   width: fit-content;
+   min-width: 100%;
+   margin-bottom: 30px;
+   display: flex;
+   flex-shrink: 0;
+   transition: transform 0.5s ease-in-out;
+
+   /* Ajustar a largura inicial para garantir que o overflow funcione corretamente */
+   /* Isso garante que o wrapper é largo o suficiente para conter todos os slides */
+   /* e que o overflow: hidden do pai (portfolio-carousel) os cortará. */
+}
+
+.portfolio__slide {
+   height: auto;
+   margin: 0 10px;
+   background: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   flex: 0 0 calc(33.333% - 20px);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.portfolio__slide--img {
+   width: 100%;
+   height: 220px;
+   border-bottom: 1px solid var(--border-color);
+   object-fit: cover;
+   display: block;
+}
+
+.portfolio__slide--title {
+   padding: 15px 10px 5px;
+   margin-bottom: 5px;
+   color: var(--text-dark);
+   font-size: 1.2em;
+   text-align: center;
+}
+
+.portfolio__slide--text {
+   padding: 0 10px 15px;
+   color: #666;
+   font-size: 0.9em;
+   flex-grow: 1;
+   text-align: center;
+}
+
+.project__link {
+   padding: 8px 15px;
+   margin: 15px auto;
+   background: var(--primary-color);
+   color: var(--text-light);
+   border-radius: 5px;
+   display: inline-block;
+   text-decoration: none;
+   font-size: 0.9em;
+   transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.project__link:hover {
+   background: #0056b3;
+   transform: translateY(-2px);
+}
+
+.portfolio__slides-btn {
+   width: 100%;
+   gap: 20px;
+   display: flex;
+   justify-content: center;
+}
+
+.portfolio__slides-prev,
+.portfolio__slides-next {
+   padding: 12px 25px;
+   margin: 0;
+   position: static;
+   background: var(--primary-color);
+   color: var(--text-light);
+   border: none;
+   border-radius: 5px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   opacity: 0.9;
+   cursor: pointer;
+   z-index: 10;
+   font-size: 1em;
+   transition: background 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   transform: none;
+}
+
+.portfolio__carousel .portfolio__slides-prev:hover,
+.portfolio__carousel .portfolio__slides-next:hover {
+   background: #0056b3;
+   opacity: 1;
+   transform: translateY(-2px);
+}
 
 
 /* = contact
    ========================================================================== */
 
+.contact__container {
+   padding: 0 15px;
+}
+
+.contact__title {
+   margin-bottom: 10px;
+   font-size: 2em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.contact__subtitle {
+   margin-bottom: 30px;
+   font-size: 1.1em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.contact__grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 30px;
+   align-items: flex-start;
+}
+
+.contact__form-wrapper,
+.contact__info-wrapper {
+   padding: 30px;
+   background: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact__form-title,
+.contact__info-title {
+   margin-bottom: 15px;
+   color: var(--primary-color);
+   font-size: 1.8em;
+   line-height: 1em;
+   text-align: center;
+}
+
+form label {
+   margin-bottom: 10px;
+   color: var(--text-dark);
+   font-weight: bold;
+   display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form textarea {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 15px;
+   border: 1px solid var(--border-color);
+   border-radius: 5px;
+   font-size: 1em;
+   outline-color: var(--primary-color);
+}
+
+form textarea {
+   min-height: 120px;
+   resize: vertical;
+}
+
+.contact__btn {
+   width: auto;
+   padding: 15px 30px;
+   margin: 15px auto 0;
+   background: var(--primary-color);
+   color: var(--text-light);
+   border: none;
+   border-radius: 5px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   display: inline-block;
+   cursor: pointer;
+   font-size: 1.1em;
+   font-weight: bold;
+   transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact__btn:hover {
+   background: #0056b3;
+   transform: translateY(-2px);
+}
+
+.contact__info-text,
+.contact__info-availability {
+   text-align: center;
+}
+
+.contact__info-text {
+   margin-bottom: 15px;
+   color: var(--text-dark);
+}
+
+.contact__info-item {
+   margin-bottom: 15px;
+   padding-bottom: 15px;
+   border-bottom: 1px dashed var(--border-color);
+   color: var(--text-dark);
+}
+
+.contact__info-item:last-child {
+   padding-bottom: 0;
+   border-bottom: none;
+}
+
+.contact__info-email,
+.contact__info-linkedin,
+.contact__info-github,
+.contact__info-whatsapp {
+   margin: 0;
+}
+
+.contact__info-email__link,
+.contact__info-linkedin__link,
+.contact__info-github__link,
+.contact__info-whatsapp__link {
+   color: var(--primary-color);
+   font-weight: bold;
+}
+
+.contact__info-email__link:hover,
+.contact__info-linkedin__link:hover,
+.contact__info-github__link:hover,
+.contact__info-whatsapp__link:hover {
+   text-decoration: underline;
+}
+
+.contact__info-availability {
+   margin-top: 30px;
+   color: #666;
+   font-size: 1em;
+   font-style: italic;
+}
+
+
+/* Página contato --------------------------- */
 .contact__map {
    width: 50%;
    height: 500px;
@@ -399,6 +727,17 @@ caption {
    font-family: 'Courier New', Courier, monospace;
 }
 
+.pilot__container {
+   padding: 0 15px;
+}
+
+.pilot__title {
+   margin-bottom: 10px;
+   font-size: 2em;
+   line-height: 1em;
+   text-align: center;
+}
+
 
 /* = cabaxi-roxo
    ========================================================================== */
@@ -430,10 +769,8 @@ caption {
 
 .not-found {
    min-height: 100vh;
-   /* Garante que o conteúdo ocupe a altura mínima da tela */
    padding: 20px;
    background-color: var(--bg-light);
-   /* Usa a cor de fundo do seu tema */
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -489,6 +826,28 @@ caption {
 /* = footer
    ========================================================================== */
 
+.footer__container {
+   padding: 0 15px;
+}
+
+.footer__btn {
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline;
+    transform: none;
+    box-shadow: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer__btn:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 /* Pop-up de Política de Privacidade (LGPD) */
 .popup-overlay {
    width: 100%;
@@ -497,13 +856,10 @@ caption {
    top: 0;
    left: 0;
    background: rgba(0, 0, 0, 0.7);
-   /* Fundo escuro semi-transparente */
    opacity: 0;
    visibility: hidden;
    z-index: 2000;
-   /* Acima de tudo */
    display: none;
-   /* Começa escondido */
    justify-content: center;
    align-items: center;
    transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -517,24 +873,19 @@ caption {
 .popup-content {
    width: 90%;
    max-width: 700px;
-   /* Largura máxima para legibilidade */
    max-height: 80vh;
-   /* Altura máxima para caber na tela */
    padding: 30px;
    position: relative;
    background: #fff;
    border-radius: 10px;
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
    overflow-y: auto;
-   /* Adiciona scroll se o conteúdo for muito longo */
    transform: scale(0.9);
-   /* Começa um pouco menor para efeito de transição */
    transition: transform 0.3s ease;
 }
 
 .popup-overlay.active .popup-content {
    transform: scale(1);
-   /* Expande para o tamanho normal ao ativar */
 }
 
 .popup-content h2 {
@@ -620,7 +971,7 @@ caption {
        ========================================================================== */
 
 
-   /* = perfil (portifólio)
+   /* = portifolio
        ========================================================================== */
 
 
@@ -685,7 +1036,7 @@ caption {
        ========================================================================== */
 
 
-   /* = perfil (portifólio)
+   /* = (portifolio
        ========================================================================== */
 
 
@@ -750,7 +1101,7 @@ caption {
        ========================================================================== */
 
 
-   /* = perfil (portifólio)
+   /* = portifolio
        ========================================================================== */
 
 
@@ -815,7 +1166,7 @@ caption {
        ========================================================================== */
 
 
-   /* = perfil (portifólio)
+   /* = portifolio
        ========================================================================== */
 
 
@@ -880,7 +1231,7 @@ caption {
        ========================================================================== */
 
 
-   /* = perfil (portifólio)
+   /* = portifolio
        ========================================================================== */
 
 

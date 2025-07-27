@@ -2,7 +2,7 @@
     "name": "blog pessoal",
     "short_name": "blog",
     "description": "blog para monitorar meu progresso nos estudos.",
-    "start_url": "http://localhost/estudo/templates/index.html",
+    "start_url": "http://localhost/blog-pessoal/template/index.html",
     "display": "standalone",
     "background_color": "#FFF",
     "theme_color": "#33245E",
